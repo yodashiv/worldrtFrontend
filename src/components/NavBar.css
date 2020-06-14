@@ -1,0 +1,18 @@
+.tracText {
+    color: #212121;
+    font-family: Poppins, serif;
+    /*order: 1;*/
+    height: auto;
+    width: auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    margin-right: 0.75%;
+}
+
+.logoImg {
+    /*order: 2;*/
+    height: 30px;
+    width: 30px;
+}
