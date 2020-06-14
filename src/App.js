@@ -6,6 +6,8 @@ import RtMap from "./components/RtMap";
 import ReactTooltip from "react-tooltip";
 import NavBar from "./components/NavBar";
 import RtDescriptionCard from "./components/RtDescriptionCard";
+import AlternativeSearchBar from "./components/AlternativeSearchBar";
+import SearchBar from "./components/SearchBar";
 
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
       //   <RtMap setTooltipContent={setContent} />
       //   <ReactTooltip>{content}</ReactTooltip>
       // </div>
-      <RtDescriptionCard/>
+      <SearchBar/>
   );
 }
 
