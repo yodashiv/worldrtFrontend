@@ -9,6 +9,7 @@ import RtDescriptionCard from "./components/RtDescriptionCard";
 import AlternativeSearchBar from "./components/AlternativeSearchBar";
 import SearchBar from "./components/SearchBar";
 import RtChart from "./components/RtChart";
+import ChartCard from "./components/ChartCard";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       //   <RtMap setTooltipContent={setContent} />
       //   <ReactTooltip>{content}</ReactTooltip>
       // </div>
-      <RtChart/>
+      <ChartCard/>
       // <SearchBar/>
   );
 }
