@@ -44,7 +44,12 @@ const Footnote = () => {
                     through robust statistical techniques. Inspiration for this project
                     come from Mike Kreiger and Kevin Systrom’s website, and the model used
                     here is heavily adapted from theirs. For a more in-depth exploration
-                    of the math, please reference Systrom’s work.
+                    of the math, please reference <a
+                    href={"http://systrom.com/blog/the-metric-we-need-to-manage-covid-19/"}
+                    target={"_blank"}
+                    >
+                    Systrom’s work.
+                    </a>
                 </p>
                 <h5 className={classes.titleText}> Where do we source our data?</h5>
                 <p className={classes.explainerText}>
