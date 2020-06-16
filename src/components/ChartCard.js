@@ -11,15 +11,10 @@ const styles = {
     },
     countryText: {
         fontFamily: "Poppins, Roboto, sansSerif",
-        fontSize: "20px",
+        fontSize: "1.5em",
         color: "#686B84",
         margin: "0 0 0 0",
-    },
-    rtValueText: {
-        fontFamily: "Poppins, Roboto, sansSerif",
-        fontSize: "20px",
-        color: (value >= 1) ? "#c24c4e" : "#5edb69",
-        margin: "0 0 0 0",
+        justifySelf: "center"
     },
     textContainer: {
         display: "flex",
@@ -27,13 +22,12 @@ const styles = {
     }
 };
 
-const ChartCard = () => {
+const ChartCard = ({rtValue, country}) => {
     return (
         <div style={styles.wholeChartContainer}>
             <div style={styles.textContainer}>
-                {/*<p style={styles.rtValueText}> 1.64 </p>*/}
-                <RtValueDisplay rtValue={1.64}/>
-                <p style={styles.countryText}> United States</p>
+                <RtValueDisplay rtValue={rtValue}/>
+                <p style={styles.countryText}> {country} </p>
             </div>
             <RtChart/>
         </div>

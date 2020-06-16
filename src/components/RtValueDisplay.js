@@ -12,10 +12,11 @@ let value = 1.64;
 const useStyles = makeStyles({
     root: {
         width: 80,
-        height: 100,
+        height: 60,
+        marginRight: "2%",
     },
-    title: {
-        fontSize: 20,
+    rtValueText: {
+        fontSize: "1em",
         textAlign: "center",
         fontFamily: "Poppins, Roboto, sansSerif",
         color: (value >= 1) ? "#c24c4e" : "#5edb69",
@@ -28,7 +29,7 @@ export default function RtValueDisplay({rtValue}) {
     return (
         <Card className={classes.root}>
             <CardContent>
-                <Typography className={classes.title}>
+                <Typography className={classes.rtValueText}>
                     {rtValue}
                 </Typography>
             </CardContent>
