@@ -7,6 +7,7 @@ const useStyles = makeStyles({
     root: {
         background: 'transparent',
         boxShadow: "none",
+        position: "static",
         // height: "8vh",
     },
     rootDiv: {

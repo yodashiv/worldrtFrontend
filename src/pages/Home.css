@@ -1,0 +1,33 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rtDescriptionAndImg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tableDiscussionImgContainer {
+    width: 50%;
+    height: 50%;
+}
+
+.tableDiscussionImgContainer img {
+    width: 50%;
+    height: 50%;
+    margin-left: 40%;
+}
+
+.rtMapContainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    border-radius: 20px;
+}
+
+

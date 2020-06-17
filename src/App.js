@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ChartCard from "./components/ChartCard";
 import Footnote from "./components/Footnote";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       //   <RtMap setTooltipContent={setContent} />
       //   <ReactTooltip>{content}</ReactTooltip>
       // </div>
-      <Footnote/>
+      <Home/>
       // <SearchBar/>
   );
 }
