@@ -34,10 +34,10 @@ const RtChart = () => {
     return (
         <ResponsiveLine
             data={data}
-            margin={{top: 50,
+            margin={{top: 20,
                 right: 50,
                 bottom: 60,
-                left: 80}}
+                left: 50}}
             xScale={{
                 type: 'time',
                 format: '%Y-%m-%d',
@@ -53,18 +53,18 @@ const RtChart = () => {
             axisBottom={{
                 format: '%b %d',
                 tickValues: 'every 3 months',
-                legend: 'Time',
-                legendOffset: 40,
-                legendPosition: 'middle'
+                // legend: 'Time',
+                // legendOffset: 40,
+                // legendPosition: 'middle'
             }}
             axisLeft={{
                 orient: 'left',
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'Rt Value',
-                legendOffset: -60,
-                legendPosition: 'middle'
+                // legend: 'Rt Value',
+                // legendOffset: -60,
+                // legendPosition: 'middle'
             }}
             colors={['#04b507', 'rgb(244, 117, 96)']}
             curve={"natural"}

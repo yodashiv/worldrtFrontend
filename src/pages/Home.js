@@ -6,6 +6,7 @@ import RtMap from "../components/RtMap";
 import ChartCard from "../components/ChartCard";
 import Footnote from "../components/Footnote";
 import "./Home.css";
+import ImageGridList from "../components/AllChartCards";
 
 const Home = () => {
     return (
@@ -22,8 +23,9 @@ const Home = () => {
             <div className="rtMapContainer">
                 <RtMap/>
             </div>
-            <div style={{height: "80vh", width: "30vw"}}>
-                <ChartCard rtValue={1.64} country={"United States"}/>
+            <div>
+                {/*<ChartCard rtValue={1.64} country={"United States"}/>*/}
+                <ImageGridList/>
             </div>
             <div>
                 <Footnote/>

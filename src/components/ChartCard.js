@@ -11,7 +11,7 @@ const styles = {
     },
     countryText: {
         fontFamily: "Poppins, Roboto, sansSerif",
-        fontSize: "1.5em",
+        fontSize: "0.7em",
         color: "#686B84",
         margin: "0 0 0 0",
         justifySelf: "center"
@@ -19,6 +19,8 @@ const styles = {
     textContainer: {
         display: "flex",
         flexDirection: "row",
+        alignItems: "center",
+        marginLeft: "10%"
     }
 };
 
