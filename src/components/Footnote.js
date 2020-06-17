@@ -8,6 +8,7 @@ const useStyles = makeStyles({
         backgroundColor: "#FEF7F1",
     },
     footNoteContainer: {
+        paddingTop: "1%",
         paddingBottom: "2%",
         wordWrap: "overflow-wrap",
         minWidth: "200px",
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
         maxWidth: "100%",
     },
     titleText: {
-        fontSize: "1.2em",
+        fontSize: "1em",
         fontFamily: "Poppins, Roboto, sansSerif",
         fontWeight: 300,
         marginBottom: "0px",
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
         marginLeft: "2%",
     },
     explainerText: {
-        fontSize:"1em",
+        fontSize:"0.8em",
         fontFamily: "Poppins, Roboto, sansSerif",
         marginBlockStart: "0",
         marginBlockEnd: "0",

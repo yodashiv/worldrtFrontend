@@ -14,11 +14,11 @@ const useStyles = makeStyles({
         borderRadius: "20px",
     },
     title: {
-        fontSize: 22,
+        fontSize: "1.1em",
         fontFamily: "Poppins, Roboto, sansSerif",
     },
     descriptionText: {
-        fontSize: 20,
+        fontSize: "1em",
         fontFamily: "Poppins, Roboto, sansSerif",
     }
 });

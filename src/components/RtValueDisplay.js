@@ -14,7 +14,7 @@ const useStyles = makeStyles({
         width: 30,
         height: 30,
         marginRight: "2%",
-        backgroundColor: "grey",
+        backgroundColor: "#ebebeb",
         borderRadius: "4px",
         display: "flex",
         flexDirection: "column",
