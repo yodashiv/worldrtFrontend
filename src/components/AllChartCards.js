@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ImageGridList() {
+export default function AllChartCards() {
     const classes = useStyles();
 
     return (

@@ -6,7 +6,7 @@ import RtMap from "../components/RtMap";
 import ChartCard from "../components/ChartCard";
 import Footnote from "../components/Footnote";
 import "./Home.css";
-import ImageGridList from "../components/AllChartCards";
+import AllChartCards from "../components/AllChartCards";
 
 const Home = () => {
     return (
@@ -25,7 +25,7 @@ const Home = () => {
             </div>
             <div>
                 {/*<ChartCard rtValue={1.64} country={"United States"}/>*/}
-                <ImageGridList/>
+                <AllChartCards/>
             </div>
             <div>
                 <Footnote/>
