@@ -54,6 +54,7 @@ const RtChart = (props) => {
             theme={theme}
             colors={["#445a6e"]}
             curve={"natural"}
+            enableSlices={"x"}
             enablePoints={false}
             pointSize={10}
             pointColor={{theme: 'background'}}
@@ -61,7 +62,7 @@ const RtChart = (props) => {
             pointBorderColor={{from: 'serieColor'}}
             pointLabel="y"
             pointLabelYOffset={-12}
-            useMesh={true}
+            useMesh={false}
         />
     );
 };
