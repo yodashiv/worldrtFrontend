@@ -13,10 +13,21 @@ const formatJson = (jsonData) => {
         let countryObj = {};
         countryObj["id"] = country;
         countryObj["data"] = [];
+        let prevData = [];
+        let count = 0;
         for (let [date, timeData] of Object.entries(countryData)) {
             let dataPoint = {};
             dataPoint["x"] = date;
-            dataPoint["y"] = timeData["ML"];
+            if (count > 6) {
+                prevData.shift();
+                prevData.push(timeData["ML"]);
+                let sum = prevData.reduce((a, b) => a + b);
+                dataPoint["y"] = (sum / 7).toFixed(2);
+            } else {
+                dataPoint["y"] = timeData["ML"];
+                prevData.push(timeData["ML"]);
+            }
+            count++;
             countryObj["data"].push(dataPoint);
         }
         processedData.push(countryObj);
