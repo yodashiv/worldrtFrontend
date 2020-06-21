@@ -5,7 +5,7 @@ import {
     Geographies,
     Geography
 } from "react-simple-maps";
-import { csv } from "d3-fetch";
+import { csv, json } from "d3-fetch";
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
 
@@ -31,7 +31,7 @@ const MapChart = ({ setTooltipContent }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        csv(`/vulnerability.csv`).then(data => {
+        json(`/rt_old.json`).then(data => {
             setData(data);
         });
     }, []);
@@ -43,7 +43,8 @@ const MapChart = ({ setTooltipContent }) => {
                     <Geographies geography={geoUrl}>
                         {({ geographies }) =>
                             geographies.map(geo => {
-                                const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
+                                // const d = data.find(s => s.location === geo.properties.NAME);
+                                console.log(data.ML && data.ML["('China', Timestamp('2020-01-19 00:00:00'))"]);
                                 return (
                                 <Geography
                                     key={geo.rsmKey}
@@ -55,7 +56,7 @@ const MapChart = ({ setTooltipContent }) => {
                                     onMouseLeave={() => {
                                         setTooltipContent("");
                                     }}
-                                    fill={d ? colorScale(d["2017"]) : "#F5F4F6"}
+                                    // fill={d ? colorScale(d["2017"]) : "#F5F4F6"}
                                     // style={{
                                     //     default: {
                                     //         fill: "#D6D6DA",

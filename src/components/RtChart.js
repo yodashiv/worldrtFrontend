@@ -30,6 +30,19 @@ const data = [
     },
 ];
 
+let theme = {
+    tooltip: {
+        container: {
+            background: 'white',
+            color: 'black',
+            fontSize: '0.6em',
+            borderRadius: '2px',
+            boxShadow: '0 1px 2px rgba(0, 0, 0, 0.25)',
+            padding: '5px 9px',
+        },
+    },
+};
+
 const RtChart = () => {
     return (
         <ResponsiveLine
@@ -66,8 +79,11 @@ const RtChart = () => {
                 // legendOffset: -60,
                 // legendPosition: 'middle'
             }}
-            colors={['#04b507', 'rgb(244, 117, 96)']}
+            // colors={['#04b507', 'rgb(244, 117, 96)']}
+            theme={theme}
+            colors={["#445a6e"]}
             curve={"natural"}
+            enablePoints={false}
             pointSize={10}
             pointColor={{theme: 'background'}}
             pointBorderWidth={2}
