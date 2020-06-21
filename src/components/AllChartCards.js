@@ -72,42 +72,13 @@ export default function AllChartCards() {
 
     console.log(processedData);
 
-    const data = [
-        {
-            id: 'belowOne',
-            data: [
-                { x: '2018-01-01', y: .80 },
-                { x: '2018-02-01', y: .90},
-                { x: '2018-03-01', y: .60 },
-                { x: '2018-04-01', y: .80 },
-                { x: '2018-05-01', y: null },
-                { x: '2018-06-01', y: null },
-                { x: '2018-07-01', y: null },
-                { x: '2018-08-01', y: null },
-            ],
-        },
-        {
-            id: 'aboveOne',
-            data: [
-                { x: '2018-01-01', y: null },
-                { x: '2018-02-01', y: null},
-                { x: '2018-03-01', y: null },
-                { x: '2018-04-01', y: .80 },
-                { x: '2018-05-01', y: 1.10 },
-                { x: '2018-06-01', y: 1.00 },
-                { x: '2018-07-01', y: 1.50 },
-                { x: '2018-08-01', y: 1.70 },
-            ],
-        },
-    ];
-
     return (
         <div className={classes.root}>
             <GridList cellHeight={400} className={classes.gridList} cols={3}>
                 {processedData.map((country, index) => (
                     <GridListTile key={index} cols={country.cols || 1}>
                         <div style={{height:380,}}>
-                            <ChartCard rtValue={country.data[data.length -1].y} country={country.id} data={[country] || []}/>
+                            <ChartCard rtValue={country.data[country.data.length -1].y} country={country.id} data={[country] || []}/>
                         </div>
                     </GridListTile>
                 ))}
