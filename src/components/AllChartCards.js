@@ -4,34 +4,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import ChartCard from "./ChartCard";
 import {json} from "d3-fetch";
-import myJsonData from "../data/rt.json";
-
-let tileData = [
-    {
-        country: "United States",
-        rtValue: 1.64,
-    },
-    {
-        country: "United States",
-        rtValue: 1.64,
-    },
-    {
-        country: "United States",
-        rtValue: 1.64,
-    },
-    {
-        country: "United States",
-        rtValue: 1.64,
-    },
-    {
-        country: "United States",
-        rtValue: 1.64,
-    },
-    {
-        country: "United States",
-        rtValue: 1.64,
-    },
-];
+import rtJsonData from "../data/rt.json";
 
 const formatJson = (jsonData) => {
     let processedData = [];
@@ -61,14 +34,14 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         width: "100%",
-        height: Math.ceil(tileData.length / 3) * 400 + 20,
+        height: Math.ceil(Object.keys(rtJsonData).length / 3) * 400 + 20,
     },
 }));
 
 export default function AllChartCards() {
     const classes = useStyles();
 
-    let processedData = formatJson(myJsonData);
+    let processedData = formatJson(rtJsonData);
 
     console.log(processedData);
 
