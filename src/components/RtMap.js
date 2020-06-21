@@ -31,7 +31,7 @@ const MapChart = ({ setTooltipContent }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        json(`/rt_old.json`).then(data => {
+        json(`../data/rt.json`).then(data => {
             setData(data);
         });
     }, []);
@@ -44,7 +44,7 @@ const MapChart = ({ setTooltipContent }) => {
                         {({ geographies }) =>
                             geographies.map(geo => {
                                 // const d = data.find(s => s.location === geo.properties.NAME);
-                                console.log(data.ML && data.ML["('China', Timestamp('2020-01-19 00:00:00'))"]);
+                                // console.log(data.ML && data.ML["('China', Timestamp('2020-01-19 00:00:00'))"]);
                                 return (
                                 <Geography
                                     key={geo.rsmKey}

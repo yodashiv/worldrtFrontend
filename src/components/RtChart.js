@@ -1,35 +1,6 @@
 import React from "react";
 import {ResponsiveLine} from "@nivo/line";
 
-const data = [
-    {
-        id: 'belowOne',
-        data: [
-            { x: '2018-01-01', y: .80 },
-            { x: '2018-02-01', y: .90},
-            { x: '2018-03-01', y: .60 },
-            { x: '2018-04-01', y: .80 },
-            { x: '2018-05-01', y: null },
-            { x: '2018-06-01', y: null },
-            { x: '2018-07-01', y: null },
-            { x: '2018-08-01', y: null },
-        ],
-    },
-    {
-        id: 'aboveOne',
-        data: [
-            { x: '2018-01-01', y: null },
-            { x: '2018-02-01', y: null},
-            { x: '2018-03-01', y: null },
-            { x: '2018-04-01', y: .80 },
-            { x: '2018-05-01', y: 1.10 },
-            { x: '2018-06-01', y: 1.00 },
-            { x: '2018-07-01', y: 1.50 },
-            { x: '2018-08-01', y: 1.70 },
-        ],
-    },
-];
-
 let theme = {
     tooltip: {
         container: {
@@ -43,10 +14,10 @@ let theme = {
     },
 };
 
-const RtChart = () => {
+const RtChart = (props) => {
     return (
         <ResponsiveLine
-            data={data}
+            data={props.data}
             margin={{top: 20,
                 right: 50,
                 bottom: 60,

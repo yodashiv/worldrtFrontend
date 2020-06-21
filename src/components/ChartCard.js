@@ -24,14 +24,14 @@ const styles = {
     }
 };
 
-const ChartCard = ({rtValue, country}) => {
+const ChartCard = ({rtValue, country, data}) => {
     return (
         <div style={styles.wholeChartContainer}>
             <div style={styles.textContainer}>
                 <RtValueDisplay rtValue={rtValue}/>
                 <p style={styles.countryText}> {country} </p>
             </div>
-            <RtChart/>
+            <RtChart data={data}/>
         </div>
     );
 };
