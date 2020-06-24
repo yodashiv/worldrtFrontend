@@ -6,6 +6,26 @@ import ChartCard from "./ChartCard";
 import {json} from "d3-fetch";
 import rtJsonData from "../data/rt.json";
 
+const buildRtData = (countryObj, countryData, rtLabelJson, rtLabelCountryObj) => {
+    let prevData = [];
+    let count = 0;
+    for (let [date, timeData] of Object.entries(countryData)) {
+        let dataPoint = {};
+        dataPoint["x"] = date;
+        if (count > 6) {
+            prevData.shift();
+            prevData.push(timeData[rtLabelJson]);
+            let sum = prevData.reduce((a, b) => a + b);
+            dataPoint["y"] = (sum / 7).toFixed(2);
+        } else {
+            dataPoint["y"] = timeData[rtLabelJson];
+            prevData.push(timeData[rtLabelJson]);
+        }
+        count++;
+        countryObj[rtLabelCountryObj].push(dataPoint);
+    }
+};
+
 const formatJson = (jsonData) => {
     let processedData = [];
 
@@ -15,23 +35,26 @@ const formatJson = (jsonData) => {
         countryObj["data"] = [];
         countryObj["low_50"] = [];
         countryObj["high_50"] = [];
-        let prevData = [];
-        let count = 0;
-        for (let [date, timeData] of Object.entries(countryData)) {
-            let dataPoint = {};
-            dataPoint["x"] = date;
-            if (count > 6) {
-                prevData.shift();
-                prevData.push(timeData["ML"]);
-                let sum = prevData.reduce((a, b) => a + b);
-                dataPoint["y"] = (sum / 7).toFixed(2);
-            } else {
-                dataPoint["y"] = timeData["ML"];
-                prevData.push(timeData["ML"]);
-            }
-            count++;
-            countryObj["data"].push(dataPoint);
-        }
+        buildRtData(countryObj, countryData, "ML", "data");
+        buildRtData(countryObj, countryData, "Low_50", "low_50");
+        buildRtData(countryObj, countryData, "High_50", "high_50");
+        // let prevData = [];
+        // let count = 0;
+        // for (let [date, timeData] of Object.entries(countryData)) {
+        //     let dataPoint = {};
+        //     dataPoint["x"] = date;
+        //     if (count > 6) {
+        //         prevData.shift();
+        //         prevData.push(timeData["ML"]);
+        //         let sum = prevData.reduce((a, b) => a + b);
+        //         dataPoint["y"] = (sum / 7).toFixed(2);
+        //     } else {
+        //         dataPoint["y"] = timeData["ML"];
+        //         prevData.push(timeData["ML"]);
+        //     }
+        //     count++;
+        //     countryObj["data"].push(dataPoint);
+        // }
         processedData.push(countryObj);
     }
     return processedData;
