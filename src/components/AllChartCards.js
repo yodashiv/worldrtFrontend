@@ -13,6 +13,8 @@ const formatJson = (jsonData) => {
         let countryObj = {};
         countryObj["id"] = country;
         countryObj["data"] = [];
+        countryObj["low_50"] = [];
+        countryObj["high_50"] = [];
         let prevData = [];
         let count = 0;
         for (let [date, timeData] of Object.entries(countryData)) {
