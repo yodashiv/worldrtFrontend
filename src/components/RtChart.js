@@ -95,7 +95,8 @@ const RtChart = (props) => {
             axisRight={null}
             axisBottom={{
                 format: '%b %d',
-                tickValues: `every ${Math.round(props.data[0].data.length / 3)} days`,
+                // tickValues: `every ${Math.round(props.data[0].data.length / 3)} days`,
+                tickValues: 3
                 // legend: 'Time',
                 // legendOffset: 40,
                 // legendPosition: 'middle'
