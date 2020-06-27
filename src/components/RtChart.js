@@ -16,12 +16,24 @@ let theme = {
     },
 };
 
-const AreaLayer = ({ series, xScale, yScale, innerHeight }) => {
+const AreaLayer = (props) => {
+    const { series, xScale, yScale, innerHeight, data } = props;
+    console.log(props);
     const areaGenerator = area()
-        .x(d => xScale(d.data.x))
-        .y0(d => Math.min(innerHeight, yScale(d.data.y - 0.4)))
-        .y1(d => yScale(d.data.y + 0.3))
+        .x(d => console.log(d) || xScale(d.data.data.x))
+        .y0(d => Math.min(innerHeight, yScale(d.low50.y)))
+        .y1(d => Math.min(innerHeight, yScale(d.high50.y)))
         .curve(curveMonotoneX);
+
+// const AreaLayer = (props) => {
+//     let { series, xScale, yScale, innerHeight } = props;
+//     console.log(props);
+//
+//     const areaGenerator = area()
+//         .x(d => console.log(d) || xScale(d.data.x))
+//         .y0(d => Math.min(innerHeight, yScale(d.data.y - 40)))
+//         .y1(d => yScale(d.data.y + 10))
+//         .curve(curveMonotoneX);
 
     return (
         <>
@@ -39,7 +51,8 @@ const AreaLayer = ({ series, xScale, yScale, innerHeight }) => {
                 ]}
             />
             <path
-                d={areaGenerator(series[0].data)}
+                // d={areaGenerator(series[0].data)}
+                d={areaGenerator(series[0])}
                 fill="url(#pattern)"
                 fillOpacity={0.6}
                 stroke="#3daff7"
@@ -50,6 +63,7 @@ const AreaLayer = ({ series, xScale, yScale, innerHeight }) => {
 };
 
 const RtChart = (props) => {
+    console.log(props.data);
     return (
         <ResponsiveLine
             data={props.data}

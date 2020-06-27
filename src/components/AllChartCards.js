@@ -33,11 +33,11 @@ const formatJson = (jsonData) => {
         let countryObj = {};
         countryObj["id"] = country;
         countryObj["data"] = [];
-        countryObj["low_50"] = [];
-        countryObj["high_50"] = [];
+        countryObj["low50"] = [];
+        countryObj["high50"] = [];
         buildRtData(countryObj, countryData, "ML", "data");
-        buildRtData(countryObj, countryData, "Low_50", "low_50");
-        buildRtData(countryObj, countryData, "High_50", "high_50");
+        buildRtData(countryObj, countryData, "Low_50", "low50");
+        buildRtData(countryObj, countryData, "High_50", "high50");
         // let prevData = [];
         // let count = 0;
         // for (let [date, timeData] of Object.entries(countryData)) {
