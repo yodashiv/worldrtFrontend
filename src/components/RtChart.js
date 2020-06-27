@@ -28,7 +28,7 @@ const AreaLayer = (props) => {
         .x((d, i) => console.log(i) || xScale(d.data.x))
         .y0((d, i) => Math.min(innerHeight, yScale(props.data[0].low50[i].y)))
         .y1((d, i) => Math.min(innerHeight, yScale(props.data[0].high50[i].y)))
-        .curve(curveNatural);
+        .curve(curveMonotoneX);
 
 // const AreaLayer = (props) => {
 //     let { series, xScale, yScale, innerHeight } = props;
@@ -61,7 +61,7 @@ const AreaLayer = (props) => {
                 fill="url(#pattern)"
                 fillOpacity={0.6}
                 stroke="#3daff7"
-                strokeWidth={1}
+                strokeWidth={2}
             />
         </>
     )
@@ -106,10 +106,10 @@ const RtChart = (props) => {
                 // legendPosition: 'middle'
             }}
             // colors={['#04b507', 'rgb(244, 117, 96)']}
-            lineWidth={1}
+            lineWidth={2}
             theme={theme}
             colors={["#445a6e"]}
-            curve={"natural"}
+            curve={"monotoneX"}
             enableSlices={"x"}
             enablePoints={false}
             layers={[
