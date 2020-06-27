@@ -40,6 +40,9 @@ const AreaLayer = (props) => {
 //         .y1(d => yScale(d.data.y + 10))
 //         .curve(curveMonotoneX);
 
+    let color = "#edb668";
+    // let color = "#8caacf";
+
     return (
         <>
             <Defs
@@ -58,10 +61,11 @@ const AreaLayer = (props) => {
             <path
                 d={areaGenerator(series[0].data)}
                 // d={areaGenerator(series[0].meanLowHighData)}
-                fill="url(#pattern)"
-                fillOpacity={0.6}
-                stroke="#3daff7"
-                strokeWidth={2}
+                // fill="url(#pattern)"
+                fill={color}
+                fillOpacity={0.2}
+                stroke={color}
+                strokeWidth={1}
             />
         </>
     )
