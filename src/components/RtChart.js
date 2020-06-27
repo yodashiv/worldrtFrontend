@@ -1,7 +1,7 @@
 import React from "react";
 import {ResponsiveLine} from "@nivo/line";
 import { Defs } from '@nivo/core';
-import { area, curveMonotoneX } from 'd3-shape';
+import { area, curveMonotoneX, curveNatural } from 'd3-shape';
 
 let theme = {
     tooltip: {
@@ -21,10 +21,10 @@ const AreaLayer = (props) => {
     console.log(props);
 
     const areaGenerator = area()
-        .x(d => console.log((new Date(d.x)).toString()) || xScale((new Date(d.x))))
+        .x(d => xScale((new Date(d.x))))
         .y0(d => Math.min(innerHeight, yScale(d.low50)))
         .y1(d => Math.min(innerHeight, yScale(d.high50)))
-        .curve(curveMonotoneX);
+        .curve(curveNatural);
 //
 // const AreaLayer = (props) => {
 //     let { series, xScale, yScale, innerHeight } = props;
@@ -57,7 +57,7 @@ const AreaLayer = (props) => {
                 fill="url(#pattern)"
                 fillOpacity={0.6}
                 stroke="#3daff7"
-                strokeWidth={2}
+                strokeWidth={1}
             />
         </>
     )
@@ -101,6 +101,7 @@ const RtChart = (props) => {
                 // legendPosition: 'middle'
             }}
             // colors={['#04b507', 'rgb(244, 117, 96)']}
+            lineWidth={1}
             theme={theme}
             colors={["#445a6e"]}
             curve={"natural"}
@@ -116,6 +117,7 @@ const RtChart = (props) => {
                 'axes',
                 'points',
                 'legends',
+                'crosshair',
             ]}
             pointSize={10}
             pointColor={{theme: 'background'}}
