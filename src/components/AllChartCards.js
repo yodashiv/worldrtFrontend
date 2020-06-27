@@ -9,7 +9,12 @@ import rtJsonData from "../data/rt.json";
 const buildRtData = (countryObj, countryData, rtLabelJson, rtLabelCountryObj) => {
     let prevData = [];
     let count = 0;
+    let filter = 0;
     for (let [date, timeData] of Object.entries(countryData)) {
+        if (filter < 45) {
+            filter++;
+            continue;
+        }
         let dataPoint = {};
         dataPoint["x"] = date;
         if (count > 6) {

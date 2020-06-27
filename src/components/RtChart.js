@@ -20,12 +20,16 @@ const AreaLayer = (props) => {
     let { series, xScale, yScale, innerHeight, data } = props;
     console.log(props);
 
+    const adjustTimeZone = (dateObj) => {
+        return null;
+    };
+
     const areaGenerator = area()
-        .x(d => xScale((new Date(d.x))))
-        .y0(d => Math.min(innerHeight, yScale(d.low50)))
-        .y1(d => Math.min(innerHeight, yScale(d.high50)))
+        .x((d, i) => console.log(i) || xScale(d.data.x))
+        .y0((d, i) => Math.min(innerHeight, yScale(props.data[0].low50[i].y)))
+        .y1((d, i) => Math.min(innerHeight, yScale(props.data[0].high50[i].y)))
         .curve(curveNatural);
-//
+
 // const AreaLayer = (props) => {
 //     let { series, xScale, yScale, innerHeight } = props;
 //     console.log(props);
@@ -52,8 +56,8 @@ const AreaLayer = (props) => {
                 ]}
             />
             <path
-                // d={areaGenerator(series[0].data)}
-                d={areaGenerator(series[0].meanLowHighData)}
+                d={areaGenerator(series[0].data)}
+                // d={areaGenerator(series[0].meanLowHighData)}
                 fill="url(#pattern)"
                 fillOpacity={0.6}
                 stroke="#3daff7"
@@ -76,6 +80,7 @@ const RtChart = (props) => {
                 type: 'time',
                 format: '%Y-%m-%d',
                 precision: 'day',
+                // useUTC: false
             }}
             xFormat="time:%Y-%m-%d"
             yScale={{
