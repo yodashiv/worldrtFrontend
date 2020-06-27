@@ -17,14 +17,15 @@ let theme = {
 };
 
 const AreaLayer = (props) => {
-    const { series, xScale, yScale, innerHeight, data } = props;
+    let { series, xScale, yScale, innerHeight, data } = props;
     console.log(props);
-    const areaGenerator = area()
-        .x(d => console.log(d) || xScale(d.data.data.x))
-        .y0(d => Math.min(innerHeight, yScale(d.low50.y)))
-        .y1(d => Math.min(innerHeight, yScale(d.high50.y)))
-        .curve(curveMonotoneX);
 
+    const areaGenerator = area()
+        .x(d => console.log((new Date(d.x)).toString()) || xScale((new Date(d.x))))
+        .y0(d => Math.min(innerHeight, yScale(d.low50)))
+        .y1(d => Math.min(innerHeight, yScale(d.high50)))
+        .curve(curveMonotoneX);
+//
 // const AreaLayer = (props) => {
 //     let { series, xScale, yScale, innerHeight } = props;
 //     console.log(props);
@@ -52,7 +53,7 @@ const AreaLayer = (props) => {
             />
             <path
                 // d={areaGenerator(series[0].data)}
-                d={areaGenerator(series[0])}
+                d={areaGenerator(series[0].meanLowHighData)}
                 fill="url(#pattern)"
                 fillOpacity={0.6}
                 stroke="#3daff7"

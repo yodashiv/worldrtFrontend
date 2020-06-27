@@ -26,6 +26,18 @@ const buildRtData = (countryObj, countryData, rtLabelJson, rtLabelCountryObj) =>
     }
 };
 
+const buildAllDataField = (countryObj) => {
+    countryObj["meanLowHighData"] = [];
+    for (let i = 0; i < countryObj["data"].length; i++) {
+        let allDataRecord = {};
+        allDataRecord["x"] = countryObj["data"][i]["x"];
+        allDataRecord["mean"] = countryObj["data"][i]["y"];
+        allDataRecord["low50"] = countryObj["low50"][i]["y"];
+        allDataRecord["high50"] = countryObj["high50"][i]["y"];
+        countryObj["meanLowHighData"].push(allDataRecord);
+    }
+};
+
 const formatJson = (jsonData) => {
     let processedData = [];
 
@@ -38,6 +50,7 @@ const formatJson = (jsonData) => {
         buildRtData(countryObj, countryData, "ML", "data");
         buildRtData(countryObj, countryData, "Low_50", "low50");
         buildRtData(countryObj, countryData, "High_50", "high50");
+        buildAllDataField(countryObj);
         // let prevData = [];
         // let count = 0;
         // for (let [date, timeData] of Object.entries(countryData)) {
