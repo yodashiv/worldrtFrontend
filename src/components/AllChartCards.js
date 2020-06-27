@@ -11,7 +11,7 @@ const buildRtData = (countryObj, countryData, rtLabelJson, rtLabelCountryObj) =>
     let count = 0;
     let filter = 0;
     for (let [date, timeData] of Object.entries(countryData)) {
-        if (filter < 45) {
+        if (filter < 30) {
             filter++;
             continue;
         }
