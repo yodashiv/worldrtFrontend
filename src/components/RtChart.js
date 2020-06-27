@@ -18,14 +18,13 @@ let theme = {
 
 const AreaLayer = (props) => {
     let { series, xScale, yScale, innerHeight, data } = props;
-    console.log(props);
 
     const adjustTimeZone = (dateObj) => {
         return null;
     };
 
     const areaGenerator = area()
-        .x((d, i) => console.log(i) || xScale(d.data.x))
+        .x((d => xScale(d.data.x)))
         .y0((d, i) => Math.min(innerHeight, yScale(props.data[0].low50[i].y)))
         .y1((d, i) => Math.min(innerHeight, yScale(props.data[0].high50[i].y)))
         .curve(curveMonotoneX);

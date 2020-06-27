@@ -55,7 +55,6 @@ const formatJson = (jsonData) => {
         buildRtData(countryObj, countryData, "ML", "data");
         buildRtData(countryObj, countryData, "Low_50", "low50");
         buildRtData(countryObj, countryData, "High_50", "high50");
-        buildAllDataField(countryObj);
         // let prevData = [];
         // let count = 0;
         // for (let [date, timeData] of Object.entries(countryData)) {
@@ -96,8 +95,6 @@ export default function AllChartCards() {
     const classes = useStyles();
 
     let processedData = formatJson(rtJsonData);
-
-    console.log(processedData);
 
     return (
         <div className={classes.root}>
