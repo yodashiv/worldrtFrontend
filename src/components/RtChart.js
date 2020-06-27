@@ -2,6 +2,7 @@ import React from "react";
 import {ResponsiveLine} from "@nivo/line";
 import { Defs } from '@nivo/core';
 import { area, curveMonotoneX, curveNatural } from 'd3-shape';
+import SliceTooltip from "./chartUtils";
 
 let theme = {
     tooltip: {
@@ -109,6 +110,31 @@ const RtChart = (props) => {
                 // legendPosition: 'middle'
             }}
             // colors={['#04b507', 'rgb(244, 117, 96)']}
+            sliceTooltip={SliceTooltip}
+            // sliceTooltip={({ slice }) => {
+            //     console.log(slice);
+            //     return (
+            //         <div
+            //             style={{
+            //                 background: 'white',
+            //                 border: '1px solid #ccc',
+            //             }}
+            //         >
+            //             <div>{slice.points[0].serieId}: {slice.points[0].data.y}</div>
+            //             {slice.points.map(point => (
+            //                 <div
+            //                     key={point.id}
+            //                     style={{
+            //                         color: point.serieColor,
+            //                         padding: '3px 0',
+            //                     }}
+            //                 >
+            //                     <strong>{point.data.x.toLocaleDateString()}</strong>
+            //                 </div>
+            //             ))}
+            //         </div>
+            //     )
+            // }}
             lineWidth={2}
             theme={theme}
             colors={["#445a6e"]}
