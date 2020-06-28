@@ -30,11 +30,19 @@ const MapChart = ({ setTooltipContent }) => {
 
     const [data, setData] = useState([]);
 
+    // useEffect(() => {
+    //     json(`../data/rt.json`).then(data => {
+    //         setData(data);
+    //     });
+    // }, []);
+
     useEffect(() => {
-        json(`../data/rt.json`).then(data => {
+        json(`/rt.json`).then(data => {
             setData(data);
         });
     }, []);
+
+    console.log(data);
 
     return (
         <>
@@ -44,6 +52,12 @@ const MapChart = ({ setTooltipContent }) => {
                         {({ geographies }) =>
                             geographies.map(geo => {
                                 // const d = data.find(s => s.location === geo.properties.NAME);
+                                // const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
+                                let d = data[geo.properties.NAME];
+                                if (d !== undefined) {
+                                    d = d["2020-06-20"];
+                                }
+                                console.log(geo);
                                 // console.log(data.ML && data.ML["('China', Timestamp('2020-01-19 00:00:00'))"]);
                                 return (
                                 <Geography
@@ -56,7 +70,7 @@ const MapChart = ({ setTooltipContent }) => {
                                     onMouseLeave={() => {
                                         setTooltipContent("");
                                     }}
-                                    // fill={d ? colorScale(d["2017"]) : "#F5F4F6"}
+                                    fill={d ? colorScale(d["ML"]) : "#F5F4F6"}
                                     // style={{
                                     //     default: {
                                     //         fill: "#D6D6DA",

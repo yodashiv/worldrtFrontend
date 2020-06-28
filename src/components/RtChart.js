@@ -72,7 +72,7 @@ const AreaLayer = (props) => {
 };
 
 const RtChart = (props) => {
-    console.log(props.data);
+    // console.log(props.data);
     return (
         <ResponsiveLine
             data={props.data}
