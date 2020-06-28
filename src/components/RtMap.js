@@ -53,7 +53,10 @@ const MapChart = ({ setTooltipContent }) => {
                             geographies.map(geo => {
                                 // const d = data.find(s => s.location === geo.properties.NAME);
                                 // const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
-                                let d = data[geo.properties.NAME];
+                                // let d = data[geo.properties.NAME];
+                                // let d = [data].find(country => country["2020-06-20"].iso_code === geo.properties.ISO_A3);
+                                console.log(data);
+                                let d;
                                 if (d !== undefined) {
                                     d = d["2020-06-20"];
                                 }
