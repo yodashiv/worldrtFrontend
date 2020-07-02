@@ -9,6 +9,12 @@ import { csv, json } from "d3-fetch";
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
 
+import countries from "i18n-iso-countries";
+import i18n_iso_countries from "i18n-iso-countries/langs/en.json";
+
+countries.registerLocale(i18n_iso_countries);
+console.log(countries.getNames('en'));
+
 const geoUrl =
     "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
@@ -37,10 +43,17 @@ const MapChart = ({ setTooltipContent }) => {
     // }, []);
 
     useEffect(() => {
-        json(`/rt.json`).then(data => {
+        json(`/rtMap.json`).then(data => {
             setData(data);
         });
     }, []);
+
+
+    // useEffect(() => {
+    //     csv(`/rt_old.csv`).then(data => {
+    //         setData(data);
+    //     });
+    // }, []);
 
     console.log(data);
 
@@ -55,13 +68,14 @@ const MapChart = ({ setTooltipContent }) => {
                                 // const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
                                 // let d = data[geo.properties.NAME];
                                 // let d = [data].find(country => country["2020-06-20"].iso_code === geo.properties.ISO_A3);
+                                // let d = data[countries.getAlpha3Code(geo.properties.NAME, "en")];
+                                // console.log(countries.getAlpha3Code(geo.properties.NAME, "en"));
+                                let latestRtValue = data[geo.properties.ISO_A3];
                                 console.log(data);
-                                let d;
-                                if (d !== undefined) {
-                                    d = d["2020-06-20"];
-                                }
+                                // if (d !== undefined) {
+                                //     d = d["2020-06-20"];
+                                // }
                                 console.log(geo);
-                                // console.log(data.ML && data.ML["('China', Timestamp('2020-01-19 00:00:00'))"]);
                                 return (
                                 <Geography
                                     key={geo.rsmKey}
@@ -73,7 +87,8 @@ const MapChart = ({ setTooltipContent }) => {
                                     onMouseLeave={() => {
                                         setTooltipContent("");
                                     }}
-                                    fill={d ? colorScale(d["ML"]) : "#F5F4F6"}
+                                    // fill={d ? colorScale(d["ML"]) : "#F5F4F6"}
+                                    fill={latestRtValue ? colorScale(latestRtValue) : "#F5F4F6"}
                                     // style={{
                                     //     default: {
                                     //         fill: "#D6D6DA",
