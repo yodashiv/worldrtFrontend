@@ -8,6 +8,7 @@ import {
 import { csv, json } from "d3-fetch";
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
+import rtMapData from "../data/rtMap";
 
 import countries from "i18n-iso-countries";
 import i18n_iso_countries from "i18n-iso-countries/langs/en.json";
@@ -28,13 +29,16 @@ const rounded = num => {
     }
 };
 
-const colorScale = scaleLinear()
-    .domain([0.29, 0.68])
+console.log(rtMapData);
+let maxRt = (Math.max(...Object.values(rtMapData)));
+
+let colorScale = scaleLinear()
+    .domain([0.2, maxRt])
     .range(["#ffedea", "#ff5233"]);
 
 const MapChart = ({ setTooltipContent }) => {
 
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
 
     // useEffect(() => {
     //     json(`../data/rt.json`).then(data => {
@@ -42,11 +46,15 @@ const MapChart = ({ setTooltipContent }) => {
     //     });
     // }, []);
 
-    useEffect(() => {
-        json(`/rtMap.json`).then(data => {
-            setData(data);
-        });
-    }, []);
+    // useEffect(() => {
+    //     json(`/rtMap.json`).then(data => {
+    //         maxRt = (Math.max(...Object.values(data)));
+    //         colorScale = scaleLinear()
+    //             .domain([0.2, maxRt])
+    //             .range(["#ffedea", "#ff5233"]);
+    //         setData(data);
+    //     });
+    // }, []);
 
 
     // useEffect(() => {
@@ -54,8 +62,6 @@ const MapChart = ({ setTooltipContent }) => {
     //         setData(data);
     //     });
     // }, []);
-
-    console.log(data);
 
     return (
         <>
@@ -70,12 +76,10 @@ const MapChart = ({ setTooltipContent }) => {
                                 // let d = [data].find(country => country["2020-06-20"].iso_code === geo.properties.ISO_A3);
                                 // let d = data[countries.getAlpha3Code(geo.properties.NAME, "en")];
                                 // console.log(countries.getAlpha3Code(geo.properties.NAME, "en"));
-                                let latestRtValue = data[geo.properties.ISO_A3];
-                                console.log(data);
+                                let latestRtValue = rtMapData[geo.properties.ISO_A3];
                                 // if (d !== undefined) {
                                 //     d = d["2020-06-20"];
                                 // }
-                                console.log(geo);
                                 return (
                                 <Geography
                                     key={geo.rsmKey}
