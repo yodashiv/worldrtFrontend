@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         width: "100%",
-        height: Math.ceil(Object.keys(rtJsonData).length / 3) * 400 + 20,
+        height: Math.ceil(processedData.length / 3) * 400 + 20,
     },
 }));
 
