@@ -12,6 +12,7 @@ import rtMapData from "../data/rtMap.json";
 
 import countries from "i18n-iso-countries";
 import i18n_iso_countries from "i18n-iso-countries/langs/en.json";
+import worldtopo from "../data/worldtopo.json";
 
 countries.registerLocale(i18n_iso_countries);
 console.log(countries.getNames('en'));
@@ -67,7 +68,7 @@ const MapChart = ({ setTooltipContent }) => {
         <>
             <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
                 <ZoomableGroup>
-                    <Geographies geography={geoUrl}>
+                    <Geographies geography={worldtopo}>
                         {({ geographies }) =>
                             geographies.map(geo => {
                                 // const d = data.find(s => s.location === geo.properties.NAME);
