@@ -8,7 +8,7 @@ import {
 import { csv, json } from "d3-fetch";
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
-import rtMapData from "../data/rtMap";
+import rtMapData from "../data/rtMap.json";
 
 import countries from "i18n-iso-countries";
 import i18n_iso_countries from "i18n-iso-countries/langs/en.json";
