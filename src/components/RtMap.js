@@ -85,8 +85,9 @@ const MapChart = ({ setTooltipContent }) => {
                                     key={geo.rsmKey}
                                     geography={geo}
                                     onMouseEnter={() => {
-                                        const { NAME, POP_EST } = geo.properties;
-                                        setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
+                                        // const { NAME, POP_EST } = geo.properties;
+                                        const { NAME } = geo.properties;
+                                        setTooltipContent(`${NAME} — ${latestRtValue || "No estimate"}`);
                                     }}
                                     onMouseLeave={() => {
                                         setTooltipContent("");
