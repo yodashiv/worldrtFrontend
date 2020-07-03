@@ -38,7 +38,7 @@ const Footnote = () => {
     return (
         <div className={classes.backgroundContainer}>
             <div className={classes.footNoteContainer}>
-                <h5 className={classes.titleText}> Determining Rt</h5>
+                <h5 id="beginFootNote" className={classes.titleText}> Determining Rt</h5>
                 <p className={classes.explainerText}>
                     Rt is a dynamic number that relies on hard-to-measure factors.
                     Thus, at best, we can only estimate the Rt value of a given region

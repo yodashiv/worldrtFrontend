@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar} from "@material-ui/core";
 import virusIcon from "../images/virusIcon.svg";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles({
     root: {
@@ -84,7 +85,7 @@ const TopNavBar = () => {
                         <img className={classes.logoImg} src={virusIcon} alt="Logo"/>
                     </div>
                     <div className={classes.optionsContainer}>
-                        <p className={classes.methodText}>Methodology</p>
+                        <Link href={"#beginFootNote"} className={classes.methodText}>Methodology</Link>
                         <p className={classes.contactText}>Contact Us</p>
                     </div>
                 </div>
