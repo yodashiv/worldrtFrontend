@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {AppBar, Toolbar} from "@material-ui/core";
 import virusIcon from "../images/virusIcon.svg";
 import Link from "@material-ui/core/Link";
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from "react-share";
 
 const useStyles = makeStyles({
     root: {
@@ -69,6 +70,13 @@ const useStyles = makeStyles({
         marginRight: "3%",
         // whiteSpace: "nowrap"
     },
+    shareContainer: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        marginRight: "3%",
+    }
 });
 
 const TopNavBar = () => {
@@ -86,6 +94,18 @@ const TopNavBar = () => {
                         <img className={classes.logoImg} src={virusIcon} alt="Logo"/>
                     </div>
                     <div className={classes.optionsContainer}>
+                        <div className={classes.shareContainer}>
+                            <div>
+                                <FacebookShareButton url="rtworld.com">
+                                    <FacebookIcon round={true} size={40} logoFillColor="white" />
+                                </FacebookShareButton>
+                            </div>
+                            <div>
+                                <TwitterShareButton url="rtworld.com">
+                                    <TwitterIcon round={true} size={40} logoFillColor="white" />
+                                </TwitterShareButton>
+                            </div>
+                        </div>
                         <Link href={"#beginMethodology"} className={classes.methodText}>Methodology</Link>
                         <Link href={"#beginFAQ"} className={classes.contactText}>FAQ</Link>
                     </div>
