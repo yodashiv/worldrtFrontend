@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles({
     root: {
@@ -39,7 +40,12 @@ export default function RtDescriptionCard() {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button
+                    size="small"
+                    onClick={() => window.open("https://qz.com/1834700/rt-the-real-time-r0-guiding-how-to-lift-coronavirus-lockdowns/", "_blank")}
+                >
+                    Learn More
+                </Button>
             </CardActions>
         </Card>
     );
