@@ -58,18 +58,25 @@ const Footnote = () => {
                     Please note that while we make every effort to source reliable data, lags and errors in reporting can
                     adversely affect testing data.
                 </p>
+                <h5 className={classes.titleText}> What are the yellow bands on the charts?</h5>
+                <p className={classes.explainerText}>
+                    Because the Rt value is statistically determined, we cannot be certain that the Rt value
+                    revealed by our model reflects reality. Thus, to account for the uncertainty in our model,
+                    we include a margin of error in our calculations. This is visually represented as yellow bands.
+                </p>
+                <h5 className={classes.titleText}> Why does the Rt value oscillate so much?</h5>
+                <p className={classes.explainerText}>
+                    COVID-19 reporting procedures vary between countries, making it difficult to obtain granular information
+                    about cases. There are more powerful models to determine Rt, but unfortunately they require data that simply
+                    isn't available for every country. One of the known limitations of our current model is its sensitivity to the
+                    data, resulting in the oscillations you see above in the charts. 
+                </p>
                 <h5 className={classes.titleText}> How should this data be used?</h5>
                 <p className={classes.explainerText}>
                     The Rt values of countries are meant to provide a rough sense of how the virus is growing
                     in a given country. Please keep in mind that while the Rt value yields valuable insight
                     into the evolution of COVID-19, other metrics should also be considered to form a
                     more complete picture of the situation.
-                </p>
-                <h5 className={classes.titleText}> What are the yellow bands on the charts?</h5>
-                <p className={classes.explainerText}>
-                    Because the Rt value is statistically determined, we cannot be certain that the Rt value
-                    revealed by our model reflects reality. Thus, to account for the uncertainty in our model,
-                    we include a margin of error in our calculations. This is visually represented as yellow bands.
                 </p>
                 <h5 className={classes.titleText}> My country is faring well, but its Rt value is high. Why?</h5>
                 <p className={classes.explainerText}>
