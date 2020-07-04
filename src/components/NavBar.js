@@ -71,11 +71,14 @@ const useStyles = makeStyles({
         // whiteSpace: "nowrap"
     },
     shareContainer: {
+        "& div": {
+            marginRight: "5px"
+        },
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "flex-end",
-        marginRight: "3%",
+        marginRight: "2%",
     }
 });
 
