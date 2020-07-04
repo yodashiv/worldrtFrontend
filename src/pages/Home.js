@@ -15,12 +15,12 @@ const Home = () => {
             <ScrollToTopPill/>
             <TopNavBar/>
             <div className="rtDescriptionAndImg">
-                <div style={{width: "40%", marginLeft: "16px"}}>
+                <div style={{width: "100%", marginLeft: "8%", marginRight: "8%"}}>
                     <RtDescriptionCard/>
                 </div>
-                <div className="tableDiscussionImgContainer">
-                    <img src={tableDiscussion} alt={"Table Discussion"}/>
-                </div>
+                {/*<div className="tableDiscussionImgContainer">*/}
+                {/*    <img src={tableDiscussion} alt={"Table Discussion"}/>*/}
+                {/*</div>*/}
             </div>
             <div className="rtMapContainer">
                 <RtMap/>

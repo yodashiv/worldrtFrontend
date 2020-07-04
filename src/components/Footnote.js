@@ -69,7 +69,7 @@ const Footnote = () => {
                     COVID-19 reporting procedures vary between countries, making it difficult to obtain granular information
                     about cases. There are more powerful models to determine Rt, but unfortunately they require data that simply
                     isn't available for every country. One of the known limitations of our current model is its sensitivity to the
-                    data, resulting in the oscillations you see above in the charts. 
+                    data, resulting in the oscillations you see above in the charts.
                 </p>
                 <h5 className={classes.titleText}> How should this data be used?</h5>
                 <p className={classes.explainerText}>
