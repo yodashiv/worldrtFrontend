@@ -109,8 +109,21 @@ const TopNavBar = () => {
                                 </TwitterShareButton>
                             </div>
                         </div>
-                        <Link href={"#beginMethodology"} className={classes.methodText}>Methodology</Link>
-                        <Link href={"#beginFAQ"} className={classes.contactText}>FAQ</Link>
+                        <Link
+                            // href={"#beginMethodology"}
+                            // onClick={() => window.scrollTo({ top: 700, behavior: "smooth" })}
+                            onClick={() => document.getElementById("beginMethodology").scrollIntoView({behavior: "smooth"})}
+                            className={classes.methodText}
+                        >
+                            Methodology
+                        </Link>
+                        <Link
+                            // href={"#beginFAQ"}
+                            onClick={() => document.getElementById("beginFAQ").scrollIntoView({behavior: "smooth"})}
+                            className={classes.contactText}
+                        >
+                            FAQ
+                        </Link>
                     </div>
                 </div>
             </Toolbar>
