@@ -5,6 +5,8 @@ import GridListTile from '@material-ui/core/GridListTile';
 import ChartCard from "./ChartCard";
 import {json} from "d3-fetch";
 import processedData from "../data/rtProcessed.json";
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // const buildRtData = (countryObj, countryData, rtLabelJson, rtLabelCountryObj) => {
 //     let prevData = [];
@@ -87,16 +89,31 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         width: "100%",
-        height: Math.ceil(processedData.length / 3) * 400 + 20,
+        // height: Math.ceil(processedData.length / 3) * 400 + 20,
     },
 }));
 
 export default function AllChartCards() {
     const classes = useStyles();
+    const theme = useTheme();
+
+    let isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+    let isTablet = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const determineCols = () => {
+        console.log(theme.breakpoints.down('sm'));
+        if (isMobile) {
+            return 1;
+        } else if (isTablet) {
+            return 2;
+        } else {
+            return 3;
+        }
+    };
 
     return (
         <div className={classes.root}>
-            <GridList cellHeight={400} className={classes.gridList} cols={3}>
+            <GridList cellHeight={400} className={classes.gridList} cols={determineCols()}>
                 {processedData.map((country, index) => (
                     <GridListTile key={index} cols={country.cols || 1}>
                         <div style={{height:380,}}>
