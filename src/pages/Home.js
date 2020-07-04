@@ -7,10 +7,12 @@ import ChartCard from "../components/ChartCard";
 import Footnote from "../components/Footnote";
 import "./Home.css";
 import AllChartCards from "../components/AllChartCards";
+import ScrollToTopPill from "../components/ScrollToTop";
 
 const Home = () => {
     return (
         <div className="homeContainer">
+            <ScrollToTopPill/>
             <TopNavBar/>
             <div className="rtDescriptionAndImg">
                 <div style={{width: "40%", marginLeft: "16px"}}>
