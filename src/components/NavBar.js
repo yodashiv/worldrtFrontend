@@ -123,7 +123,7 @@ const TopNavBar = () => {
                         </Link>
                         <Link
                             // href={"#beginFAQ"}
-                            onClick={() => document.getElementById("beginFAQ").scrollIntoView({behavior: "smooth"})}
+                            onClick={() => document.getElementById("beginMethodology").scrollIntoView({behavior: "smooth"})}
                             className={classes.contactText}
                         >
                             FAQ
