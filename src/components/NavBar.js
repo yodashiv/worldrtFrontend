@@ -4,85 +4,90 @@ import {AppBar, Toolbar} from "@material-ui/core";
 import virusIcon from "../images/virusIcon.svg";
 import Link from "@material-ui/core/Link";
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon } from "react-share";
-
-const useStyles = makeStyles({
-    root: {
-        background: 'transparent',
-        boxShadow: "none",
-        position: "static",
-        // height: "8vh",
-    },
-    rootDiv: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "spaceBetween",
-        width: "100%",
-    },
-    titleAndLogoContainer: {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        width: "50%",
-    },
-    optionsContainer: {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        width: "50%",
-    },
-    logoText: {
-        color: "#212121",
-        fontFamily: "Poppins, serif",
-        height: "auto",
-        width: "auto",
-        fontStyle: "normal",
-        fontWeight: "normal",
-        fontSize: "20px",
-        lineHeight: "30px",
-        marginRight: "0.75%",
-    },
-    logoImg: {
-        height: "30px",
-        width: "30px",
-    },
-    methodText: {
-        color: "#212121",
-        fontFamily: "Poppins, serif",
-        height: "auto",
-        width: "auto",
-        fontStyle: "normal",
-        fontWeight: "normal",
-        fontSize: "20px",
-        lineHeight: "30px",
-        marginRight: "3%",
-        // underline: "none",
-    },
-    contactText: {
-        color: "#212121",
-        fontFamily: "Poppins, serif",
-        height: "auto",
-        width: "auto",
-        fontStyle: "normal",
-        fontWeight: "normal",
-        fontSize: "20px",
-        lineHeight: "30px",
-        marginRight: "3%",
-        // whiteSpace: "nowrap"
-    },
-    shareContainer: {
-        "& div": {
-            marginRight: "5px"
-        },
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        marginRight: "2%",
-    }
-});
+import { useTheme } from '@material-ui/core/styles';
 
 const TopNavBar = () => {
+    const theme = useTheme();
+
+    const useStyles = makeStyles({
+        root: {
+            background: 'transparent',
+            boxShadow: "none",
+            position: "static",
+            // height: "8vh",
+        },
+        rootDiv: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "spaceBetween",
+            width: "100%",
+        },
+        titleAndLogoContainer: {
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            width: "50%",
+        },
+        optionsContainer: {
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            width: "50%",
+        },
+        logoText: {
+            color: "#212121",
+            fontFamily: "Poppins, serif",
+            height: "auto",
+            width: "auto",
+            fontStyle: "normal",
+            fontWeight: "normal",
+            fontSize: "20px",
+            lineHeight: "30px",
+            marginRight: "0.75%",
+        },
+        logoImg: {
+            height: "30px",
+            width: "30px",
+        },
+        methodText: {
+            color: "#212121",
+            fontFamily: "Poppins, serif",
+            height: "auto",
+            width: "auto",
+            fontStyle: "normal",
+            fontWeight: "normal",
+            fontSize: "20px",
+            lineHeight: "30px",
+            marginRight: "3%",
+            [theme.breakpoints.down('xs')]: {
+                display: "none",
+            },
+            // underline: "none",
+        },
+        contactText: {
+            color: "#212121",
+            fontFamily: "Poppins, serif",
+            height: "auto",
+            width: "auto",
+            fontStyle: "normal",
+            fontWeight: "normal",
+            fontSize: "20px",
+            lineHeight: "30px",
+            marginRight: "3%",
+            // whiteSpace: "nowrap"
+        },
+        shareContainer: {
+            "& div": {
+                marginRight: "5px"
+            },
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            marginRight: "2%",
+        }
+    });
     const classes = useStyles();
     return (
         // <div className="navContainer">
