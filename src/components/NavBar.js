@@ -55,6 +55,7 @@ const useStyles = makeStyles({
         fontSize: "20px",
         lineHeight: "30px",
         marginRight: "3%",
+        // underline: "none",
     },
     contactText: {
         color: "#212121",
@@ -85,8 +86,8 @@ const TopNavBar = () => {
                         <img className={classes.logoImg} src={virusIcon} alt="Logo"/>
                     </div>
                     <div className={classes.optionsContainer}>
-                        <Link href={"#beginFootNote"} className={classes.methodText}>Methodology</Link>
-                        <p className={classes.contactText}>Contact Us</p>
+                        <Link href={"#beginMethodology"} className={classes.methodText}>Methodology</Link>
+                        <Link href={"#beginFAQ"} className={classes.contactText}>FAQ</Link>
                     </div>
                 </div>
             </Toolbar>

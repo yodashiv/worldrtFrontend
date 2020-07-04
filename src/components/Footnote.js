@@ -38,7 +38,7 @@ const Footnote = () => {
     return (
         <div className={classes.backgroundContainer}>
             <div className={classes.footNoteContainer}>
-                <h5 id="beginFootNote" className={classes.titleText}> Determining Rt</h5>
+                <h5 id="beginMethodology" className={classes.titleText}> Determining Rt</h5>
                 <p className={classes.explainerText}>
                     Rt is a dynamic number that relies on hard-to-measure factors.
                     Thus, at best, we can only estimate the Rt value of a given region
@@ -52,7 +52,7 @@ const Footnote = () => {
                     Systrom’s work.
                     </a>
                 </p>
-                <h5 className={classes.titleText}> Where do we source our data?</h5>
+                <h5 id="beginFAQ" className={classes.titleText}> Where do we source our data?</h5>
                 <p className={classes.explainerText}>
                     Data comes from lorem ipsum. Please note that while we make every
                     effort to source reliable data, lags and errors in reporting can
