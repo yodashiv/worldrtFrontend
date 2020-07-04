@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     backgroundContainer: {
         minWidth: "200px",
         width: "100%",
@@ -12,7 +12,12 @@ const useStyles = makeStyles({
         paddingBottom: "2%",
         wordWrap: "overflow-wrap",
         minWidth: "200px",
-        width: "60%",
+        [theme.breakpoints.down('xs')]: {
+            width: "90%",
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: "60%",
+        },
         maxWidth: "100%",
     },
     titleText: {
@@ -30,7 +35,7 @@ const useStyles = makeStyles({
         marginBlockEnd: "0",
         marginLeft: "4%",
     }
-});
+}));
 
 const Footnote = () => {
     const classes = useStyles();
