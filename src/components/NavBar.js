@@ -97,18 +97,18 @@ const TopNavBar = () => {
             <Toolbar>
                 <div className={classes.rootDiv}>
                     <div className={classes.titleAndLogoContainer}>
-                        <p className={classes.logoText}>WorldRt</p>
+                        <p className={classes.logoText}>RtWorld</p>
                         <img className={classes.logoImg} src={virusIcon} alt="Logo"/>
                     </div>
                     <div className={classes.optionsContainer}>
                         <div className={classes.shareContainer}>
                             <div>
-                                <FacebookShareButton url="rtworld.com">
+                                <FacebookShareButton url="rtworld.live">
                                     <FacebookIcon round={true} size={40} logoFillColor="white" />
                                 </FacebookShareButton>
                             </div>
                             <div>
-                                <TwitterShareButton url="rtworld.com">
+                                <TwitterShareButton url="rtworld.live">
                                     <TwitterIcon round={true} size={40} logoFillColor="white" />
                                 </TwitterShareButton>
                             </div>
