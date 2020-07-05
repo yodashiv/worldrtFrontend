@@ -89,10 +89,6 @@ const TopNavBar = () => {
     const classes = useStyles();
 
     return (
-        // <div className="navContainer">
-        //     <p className="tracText">TRAC</p>
-        //     <img className="landingPageImg" src={Logo} alt="Analytics Image"/>
-        // </div>
         <AppBar className={classes.root}>
             <Toolbar>
                 <div className={classes.rootDiv}>

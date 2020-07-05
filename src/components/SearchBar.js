@@ -48,22 +48,12 @@ export default function SearchBar() {
                     </React.Fragment>
                 )}
                 renderInput={(params) => (
-                    // <TextField
-                    //     {...params}
-                    //     label="Choose a country"
-                    //     variant="outlined"
-                    //     inputProps={{
-                    //         ...params.inputProps,
-                    //         autoComplete: 'new-password', // disable autocomplete and autofill
-                    //     }}
-                    // />
                     <TextField
                         variant={"outlined"}
                         {...params}
                         placeholder="Country..."
                         InputProps={{
                             ...params.InputProps,
-                            // type: 'search',
                             startAdornment: (
                                 <InputAdornment position="start">
                                     <Search fontSize="large" style={{color: "#8C8C8C"}} />

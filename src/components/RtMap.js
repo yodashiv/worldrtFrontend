@@ -15,7 +15,6 @@ import i18n_iso_countries from "i18n-iso-countries/langs/en.json";
 import worldtopo from "../data/worldtopo.json";
 
 countries.registerLocale(i18n_iso_countries);
-console.log(countries.getNames('en'));
 
 const geoUrl =
     "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -30,7 +29,6 @@ const rounded = num => {
     }
 };
 
-console.log(rtMapData);
 let maxRt = (Math.max(...Object.values(rtMapData)));
 
 let colorScale = scaleLinear()

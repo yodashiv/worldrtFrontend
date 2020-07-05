@@ -6,12 +6,7 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-      // <div>
-      //   <RtMap setTooltipContent={setContent} />
-      //   <ReactTooltip>{content}</ReactTooltip>
-      // </div>
       <Home/>
-      // <SearchBar/>
   );
 }
 

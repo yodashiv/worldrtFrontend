@@ -101,7 +101,6 @@ export default function AllChartCards() {
     let isTablet = useMediaQuery(theme.breakpoints.down('sm'));
 
     const determineCols = () => {
-        console.log(theme.breakpoints.down('sm'));
         if (isMobile) {
             return 1;
         } else if (isTablet) {

@@ -19,20 +19,6 @@ export default function AlternativeSearchBar() {
                 disableClearable={false}
                 options={renderOptions()}
                 renderInput={(params) => (
-                    // <Grid container spacing={1} alignItems="flex-start">
-                    //     <Grid item>
-                    //         <AccountCircle />
-                    //     </Grid>
-                    //     <Grid item>
-                    //         <TextField
-                    //             {...params}
-                    //             fullWidth={true}
-                    //             style = {{width: 300, height: 100}}
-                    //             id="input-with-icon-grid"
-                    //             label="With a grid" />
-                    //     </Grid>
-                    // </Grid>
-                    // <TextField {...params} label="freeSolo" margin="normal" variant="outlined" />
                     <TextField
                         {...params}
                         placeholder="Country..."

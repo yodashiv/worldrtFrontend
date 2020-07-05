@@ -72,7 +72,6 @@ const AreaLayer = (props) => {
 };
 
 const RtChart = (props) => {
-    console.log(props.data);
     return (
         <ResponsiveLine
             data={props.data}
@@ -95,47 +94,15 @@ const RtChart = (props) => {
             axisRight={null}
             axisBottom={{
                 format: '%b %d',
-                // tickValues: `every ${Math.round(props.data[0].data.length / 3)} days`,
                 tickValues: 3
-                // legend: 'Time',
-                // legendOffset: 40,
-                // legendPosition: 'middle'
             }}
             axisLeft={{
                 orient: 'left',
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                // legend: 'Rt Value',
-                // legendOffset: -60,
-                // legendPosition: 'middle'
             }}
-            // colors={['#04b507', 'rgb(244, 117, 96)']}
             sliceTooltip={SliceTooltip}
-            // sliceTooltip={({ slice }) => {
-            //     console.log(slice);
-            //     return (
-            //         <div
-            //             style={{
-            //                 background: 'white',
-            //                 border: '1px solid #ccc',
-            //             }}
-            //         >
-            //             <div>{slice.points[0].serieId}: {slice.points[0].data.y}</div>
-            //             {slice.points.map(point => (
-            //                 <div
-            //                     key={point.id}
-            //                     style={{
-            //                         color: point.serieColor,
-            //                         padding: '3px 0',
-            //                     }}
-            //                 >
-            //                     <strong>{point.data.x.toLocaleDateString()}</strong>
-            //                 </div>
-            //             ))}
-            //         </div>
-            //     )
-            // }}
             lineWidth={2}
             theme={theme}
             colors={["#445a6e"]}

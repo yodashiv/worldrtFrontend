@@ -30,31 +30,9 @@ export default function ScrollToTopPill() {
             }
         });
     }, []);
-    console.log(window.pageYOffset);
 
     const classes = useStyles();
     return (
-      //   <div
-      //       style={{
-      //           margin: "0 auto",
-      //           transition: "top 0.3s",
-      //           position: "fixed",
-      //           left: "50%",
-      //           background: "#5aa3db",
-      //           padding: "3 3 3 3",
-      //           textAlign: "center",
-      //           pointerEvents: "none",
-      //           top: isShown ? 20 : -40,
-      //       }}
-      //   >
-      // <span
-      //     className="scroll-to-top"
-      //     style={{color: "white"}}
-      //     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      // >
-      //   ↑ Scroll to top
-      // </span>
-      //   </div>
         <div
             style={{
                 margin: "0 auto",
