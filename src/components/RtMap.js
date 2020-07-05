@@ -13,6 +13,8 @@ import rtMapData from "../data/rtMap.json";
 import countries from "i18n-iso-countries";
 import i18n_iso_countries from "i18n-iso-countries/langs/en.json";
 import worldtopo from "../data/worldtopo.json";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import {useTheme} from "@material-ui/core/styles";
 
 countries.registerLocale(i18n_iso_countries);
 
@@ -61,11 +63,13 @@ const MapChart = ({ setTooltipContent }) => {
     //         setData(data);
     //     });
     // }, []);
+    const theme = useTheme();
+    let isMobile = useMediaQuery(theme.breakpoints.down('xs'));
 
-    return (
+    if (isMobile) {
+        return (
         <>
             <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
-                <ZoomableGroup>
                     <Geographies geography={worldtopo}>
                         {({ geographies }) =>
                             geographies.map(geo => {
@@ -80,42 +84,107 @@ const MapChart = ({ setTooltipContent }) => {
                                 //     d = d["2020-06-20"];
                                 // }
                                 return (
-                                <Geography
-                                    key={geo.rsmKey}
-                                    geography={geo}
-                                    onMouseEnter={() => {
-                                        // const { NAME, POP_EST } = geo.properties;
-                                        const { NAME } = geo.properties;
-                                        setTooltipContent(`${NAME} — ${latestRtValue || "No estimate"}`);
-                                    }}
-                                    onMouseLeave={() => {
-                                        setTooltipContent("");
-                                    }}
-                                    // fill={d ? colorScale(d["ML"]) : "#F5F4F6"}
-                                    fill={latestRtValue ? colorScale(latestRtValue) : "#F5F4F6"}
-                                    // style={{
-                                    //     default: {
-                                    //         fill: "#D6D6DA",
-                                    //         outline: "none"
-                                    //     },
-                                    //     hover: {
-                                    //         fill: "#F53",
-                                    //         outline: "none"
-                                    //     },
-                                    //     pressed: {
-                                    //         fill: "#E42",
-                                    //         outline: "none"
-                                    //     }
-                                    // }}
-                                />
+                                    <Geography
+                                        key={geo.rsmKey}
+                                        geography={geo}
+                                        onMouseEnter={() => {
+                                            // const { NAME, POP_EST } = geo.properties;
+                                            const { NAME } = geo.properties;
+                                            setTooltipContent(`${NAME} — ${latestRtValue || "No estimate"}`);
+                                        }}
+                                        onMouseLeave={() => {
+                                            setTooltipContent("");
+                                        }}
+                                        // fill={d ? colorScale(d["ML"]) : "#F5F4F6"}
+                                        fill={latestRtValue ? colorScale(latestRtValue) : "#F5F4F6"}
+                                        // style={{
+                                        //     default: {
+                                        //         fill: "#D6D6DA",
+                                        //         outline: "none"
+                                        //     },
+                                        //     hover: {
+                                        //         fill: "#F53",
+                                        //         outline: "none"
+                                        //     },
+                                        //     pressed: {
+                                        //         fill: "#E42",
+                                        //         outline: "none"
+                                        //     }
+                                        // }}
+                                    />
                                 );
                             })
                         }
                     </Geographies>
-                </ZoomableGroup>
             </ComposableMap>
-        </>
-    );
+        </>);
+    } else {
+        return (
+            <>
+                <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+                    <ZoomableGroup>
+                        <Geographies geography={worldtopo}>
+                            {({ geographies }) =>
+                                geographies.map(geo => {
+                                    // const d = data.find(s => s.location === geo.properties.NAME);
+                                    // const d = data.find(s => s.ISO3 === geo.properties.ISO_A3);
+                                    // let d = data[geo.properties.NAME];
+                                    // let d = [data].find(country => country["2020-06-20"].iso_code === geo.properties.ISO_A3);
+                                    // let d = data[countries.getAlpha3Code(geo.properties.NAME, "en")];
+                                    // console.log(countries.getAlpha3Code(geo.properties.NAME, "en"));
+                                    let latestRtValue = rtMapData[geo.properties.ISO_A3];
+                                    // if (d !== undefined) {
+                                    //     d = d["2020-06-20"];
+                                    // }
+                                    return (
+                                        <Geography
+                                            style={{
+                                                default: {
+                                                    outline: 'none'
+                                                },
+                                                hover: {
+                                                    outline: 'none'
+                                                },
+                                                pressed: {
+                                                    outline: 'none'
+                                                }
+                                            }}
+                                            key={geo.rsmKey}
+                                            geography={geo}
+                                            onMouseEnter={() => {
+                                                // const { NAME, POP_EST } = geo.properties;
+                                                const { NAME } = geo.properties;
+                                                setTooltipContent(`${NAME} — ${latestRtValue || "No estimate"}`);
+                                            }}
+                                            onMouseLeave={() => {
+                                                setTooltipContent("");
+                                            }}
+                                            // fill={d ? colorScale(d["ML"]) : "#F5F4F6"}
+                                            fill={latestRtValue ? colorScale(latestRtValue) : "#F5F4F6"}
+                                            // style={{
+                                            //     default: {
+                                            //         fill: "#D6D6DA",
+                                            //         outline: "none"
+                                            //     },
+                                            //     hover: {
+                                            //         fill: "#F53",
+                                            //         outline: "none"
+                                            //     },
+                                            //     pressed: {
+                                            //         fill: "#E42",
+                                            //         outline: "none"
+                                            //     }
+                                            // }}
+                                        />
+                                    );
+                                })
+                            }
+                        </Geographies>
+                    </ZoomableGroup>
+                </ComposableMap>
+            </>
+        );
+    }
 };
 
 const RtMap = () => {
