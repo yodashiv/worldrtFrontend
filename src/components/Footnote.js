@@ -48,7 +48,13 @@ const Footnote = () => {
                     Rt is a dynamic number that relies on hard-to-measure factors.
                     Thus, at best, we can only estimate the Rt value of a given region
                     through robust statistical techniques. Inspiration for this project
-                    comes from Mike Kreiger and Kevin Systrom, and the model used
+                    comes from Mike Kreiger and Kevin Systrom's <a
+                    href={"https://rt.live/"}
+                    target={"_blank"}
+                >
+                    website
+                </a>
+                    , and the model used
                     here is heavily adapted from theirs. For a more in-depth exploration
                     of the math, please reference <a
                     href={"http://systrom.com/blog/the-metric-we-need-to-manage-covid-19/"}
