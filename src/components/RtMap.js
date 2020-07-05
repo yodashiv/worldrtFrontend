@@ -85,6 +85,17 @@ const MapChart = ({ setTooltipContent }) => {
                                 // }
                                 return (
                                     <Geography
+                                        style={{
+                                            default: {
+                                                outline: 'none'
+                                            },
+                                            hover: {
+                                                outline: 'none'
+                                            },
+                                            pressed: {
+                                                outline: 'none'
+                                            }
+                                        }}
                                         key={geo.rsmKey}
                                         geography={geo}
                                         onMouseEnter={() => {
